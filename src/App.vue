@@ -1,20 +1,31 @@
 <template>
   <div class="app">
     <div class="app__task-field">
-      <h1>Thursday, 8 September 2020</h1>
-      <h1></h1>
-      <List />
+      <div class="date">Thursday, 8 September 2020</div>
+      <h1 class="header">My plans for today</h1>
+      <TodoItem v-for="todo of todos" v-bind:todo="todo" :key="todo.id" />
     </div>
   </div>
 </template>
 
 <script>
-import List from '@/components/List';
+import TodoItem from '@/components/TodoItem';
+
+const todos = [
+  { id: 1, title: 'Buy coffee', completed: 'false' },
+  { id: 2, title: 'Feed the dog', completed: 'false' },
+  { id: 3, title: 'Save the world', completed: 'false' }
+];
 
 export default {
   name: 'App',
   components: {
-    List
+    TodoItem
+  },
+  data() {
+    return {
+      todos
+    };
   }
 };
 </script>
@@ -33,11 +44,31 @@ export default {
   justify-content: center;
 
   &__task-field {
-    background-color: rgba(255, 255, 255, 0.596);
+    background-color: rgba(236, 255, 251, 0.596);
     width: 70%;
     height: 80%;
     text-align: center;
     border-radius: 12px;
   }
+}
+
+.date {
+  font: {
+    family: Gill Sans, sans-serif;
+    style: italic;
+    weight: 600;
+    variant: small-caps;
+  }
+  color: rgba(63, 0, 82, 0.829);
+  padding: 1%;
+  border-bottom: rgba(130, 86, 134, 0.623) solid 2px;
+}
+
+.header {
+  font: {
+    family: Gill Sans, sans-serif;
+    weight: 600;
+  }
+  color: #163541e0;
 }
 </style>
