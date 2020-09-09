@@ -1,0 +1,45 @@
+<template>
+  <div class="add-item">
+    <input type="text" class="add-item__input" />
+    <button class="add-item__button">&plus;</button>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'AddItem'
+};
+</script>
+
+<style lang="scss">
+.add-item {
+  position: fixed;
+  bottom: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  border-top: #46889bb0 solid 2px;
+  height: 10%;
+
+  &__input {
+    width: 70%;
+    outline: none;
+    border: none;
+    padding: 1%;
+    border-radius: 15px;
+    height: 30%;
+  }
+
+  &__button {
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    border-radius: 15px;
+    border: #336472d2 2px solid;
+    cursor: pointer;
+    background-color: transparent;
+    color: #336472d2;
+  }
+}
+</style>

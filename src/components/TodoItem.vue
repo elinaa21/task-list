@@ -41,6 +41,7 @@ export default {
     cursor: pointer;
     transition: 0.5s;
     border-radius: 5px;
+    box-sizing: border-box;
 
     &:hover {
       color: #ea535b;
@@ -69,14 +70,20 @@ export default {
       text-indent: 0px;
       width: 25px;
       height: 25px;
+      box-sizing: border-box;
       background: #fff;
       border: 1px solid #4e004834;
       vertical-align: middle;
       border-image: initial;
+      transition: 0.5s;
     }
 
     &:hover {
       color: #790170e6;
+
+      &::before {
+        background-color: #79016f48;
+      }
     }
   }
 }
