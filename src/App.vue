@@ -16,15 +16,15 @@ import TodoItem from '@/components/TodoItem';
 import AddItem from '@/components/AddItem';
 
 const todos = [
-  { id: 1, title: 'Buy coffee', completed: 'false' },
-  { id: 2, title: 'Feed the dog', completed: 'false' },
-  { id: 3, title: 'Save the world', completed: 'false' },
-  { id: 4, title: 'Buy coffee', completed: 'false' },
-  { id: 5, title: 'Feed the dog', completed: 'false' },
-  { id: 6, title: 'Save the world', completed: 'false' },
-  { id: 7, title: 'Buy coffee', completed: 'false' },
-  { id: 8, title: 'Feed the dog', completed: 'false' },
-  { id: 9, title: 'Save the world', completed: 'false' }
+  { id: 1, title: 'Buy coffee', completed: false },
+  { id: 2, title: 'Feed the dog', completed: false },
+  { id: 3, title: 'Save the world', completed: false },
+  { id: 4, title: 'Buy coffee', completed: false },
+  { id: 5, title: 'Feed the dog', completed: false },
+  { id: 6, title: 'Save the world', completed: false },
+  { id: 7, title: 'Buy coffee', completed: false },
+  { id: 8, title: 'Feed the dog', completed: false },
+  { id: 9, title: 'Save the world', completed: false }
 ];
 
 export default {

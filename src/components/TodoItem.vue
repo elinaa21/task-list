@@ -2,7 +2,11 @@
   <div class="task">
     <div class="info">
       <input type="checkbox" id="completed" />
-      <label for="completed" class="info__title">{{ todo.title }}</label>
+      <label
+        for="completed"
+        v-bind:class="[{ info__title_completed: todo.completed }, info__title]"
+        >{{ todo.title }}</label
+      >
     </div>
     <button class="task__rm">&times;</button>
   </div>
@@ -16,6 +20,12 @@ export default {
       type: Object,
       required: true
     }
+  },
+  data() {
+    return {
+      info__title_completed: 'info__title_completed',
+      info__title: 'info__title'
+    };
   }
 };
 </script>
@@ -85,15 +95,20 @@ export default {
         background-color: #79016f48;
       }
     }
+
+    &_completed {
+      text-decoration: line-through;
+      color: #1635417e;
+
+      &::before {
+        content: '\2713';
+        color: #c66052;
+      }
+    }
   }
 }
 
 #completed {
   display: none;
 }
-
-// #completed:checked + .info__title::before {
-//   content: '\2713';
-//   color: #c66052;
-// }
 </style>
