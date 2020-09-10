@@ -5,8 +5,9 @@
       <label
         for="completed"
         v-bind:class="[{ info__title_completed: todo.completed }, info__title]"
-        >{{ todo.title }}</label
-      >
+        v-on:click="todo.completed = !todo.completed"
+        >{{ todo.title }}
+      </label>
     </div>
     <button class="task__rm">&times;</button>
   </div>
