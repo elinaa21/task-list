@@ -4,7 +4,12 @@
       <div class="date">Thursday, 8 September 2020</div>
       <h1 class="header">My plans for today</h1>
       <div class="list">
-        <TodoItem v-for="todo of todos" v-bind:todo="todo" :key="todo.id" />
+        <TodoItem
+          v-for="todo of todos"
+          v-bind:todo="todo"
+          :key="todo.id"
+          @remove-todo="removeTodo"
+        />
       </div>
       <AddItem />
     </div>
@@ -37,6 +42,11 @@ export default {
     return {
       todos
     };
+  },
+  methods: {
+    removeTodo(id) {
+      this.todos = this.todos.filter(item => item.id !== id)
+    }
   }
 };
 </script>

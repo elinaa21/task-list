@@ -9,7 +9,9 @@
         >{{ todo.title }}
       </label>
     </div>
-    <button class="task__rm">&times;</button>
+    <button class="task__rm" v-on:click="$emit('remove-todo', todo.id)">
+      &times;
+    </button>
   </div>
 </template>
 
