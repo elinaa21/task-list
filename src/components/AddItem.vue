@@ -1,13 +1,31 @@
 <template>
   <div class="add-item">
-    <input type="text" class="add-item__input" />
-    <button class="add-item__button">&plus;</button>
+    <input type="text" class="add-item__input" v-model="title" />
+    <button class="add-item__button" @click="addItem">&plus;</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'AddItem'
+  data() {
+    return {
+      title: ''
+    };
+  },
+  methods: {
+    addItem() {
+      if (this.title.trim()) {
+        const newTodo = {
+          id: Date.now(),
+          title: this.title,
+          completed: false
+        };
+
+        this.$emit('add-item', newTodo);
+        this.title = '';
+      }
+    }
+  }
 };
 </script>
 
@@ -26,9 +44,10 @@ export default {
     width: 70%;
     outline: none;
     border: none;
-    padding: 1%;
+    padding: 0 2%;
     border-radius: 15px;
     height: 30%;
+    font-family: inherit;
   }
 
   &__button {
@@ -40,6 +59,7 @@ export default {
     cursor: pointer;
     background-color: transparent;
     color: #336472d2;
+    outline: none;
   }
 }
 </style>

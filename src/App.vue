@@ -11,7 +11,7 @@
           @remove-todo="removeTodo"
         />
       </div>
-      <AddItem />
+      <AddItem @add-item="addTask" />
     </div>
   </div>
 </template>
@@ -25,11 +25,7 @@ const todos = [
   { id: 2, title: 'Feed the dog', completed: false },
   { id: 3, title: 'Save the world', completed: false },
   { id: 4, title: 'Buy coffee', completed: false },
-  { id: 5, title: 'Feed the dog', completed: false },
-  { id: 6, title: 'Save the world', completed: false },
-  { id: 7, title: 'Buy coffee', completed: false },
-  { id: 8, title: 'Feed the dog', completed: false },
-  { id: 9, title: 'Save the world', completed: false }
+  { id: 5, title: 'Feed the dog', completed: false }
 ];
 
 export default {
@@ -45,7 +41,10 @@ export default {
   },
   methods: {
     removeTodo(id) {
-      this.todos = this.todos.filter(item => item.id !== id)
+      this.todos = this.todos.filter(item => item.id !== id);
+    },
+    addTask(task) {
+      this.todos.push(task);
     }
   }
 };

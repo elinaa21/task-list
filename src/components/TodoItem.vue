@@ -5,7 +5,7 @@
       <label
         for="completed"
         v-bind:class="[{ info__title_completed: todo.completed }, info__title]"
-        v-on:click="todo.completed = !todo.completed"
+        @click="todo.completed = !todo.completed"
         >{{ todo.title }}
       </label>
     </div>
