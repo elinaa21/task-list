@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <div class="app__task-field">
-      <div class="date">Thursday, 8 September 2020</div>
+      <div class="date">{{ fullDate }}</div>
       <h1 class="header">My plans for today</h1>
       <div class="list">
         <TodoItem
@@ -28,6 +28,35 @@ const todos = [
   { id: 5, title: 'Feed the dog', completed: false }
 ];
 
+const date = new Date();
+const dayOfWeek = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday'
+];
+const month = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+];
+
+const fullDate = `${dayOfWeek[date.getDay()]}, ${date.getDate()} ${
+  month[date.getMonth()]
+} ${date.getFullYear()}`;
+
 export default {
   name: 'App',
   components: {
@@ -36,7 +65,8 @@ export default {
   },
   data() {
     return {
-      todos
+      todos,
+      fullDate
     };
   },
   methods: {
