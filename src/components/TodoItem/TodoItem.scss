@@ -1,3 +1,13 @@
+@media (max-width: 460px) {
+  label {
+    font: {
+      family: Gill Sans, sans-serif;
+      weight: 400;
+      size: 15px;
+    }
+  }
+}
+
 .task {
     display: flex;
     justify-content: space-between;
