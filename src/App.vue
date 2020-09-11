@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import TodoItem from '@/components/TodoItem';
-import AddItem from '@/components/AddItem';
+import TodoItem from '@/components/TodoItem/TodoItem';
+import AddItem from '@/components/AddItem/AddItem';
 
 const todos = [
   { id: 1, title: 'Buy coffee', completed: false },
@@ -50,50 +50,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.app {
-  background-image: url('./img/ocean.jpg');
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &__task-field {
-    background-color: rgba(236, 255, 251, 0.596);
-    width: 70%;
-    height: 80%;
-    text-align: center;
-    border-radius: 12px;
-  }
-}
-
-.list {
-  overflow: scroll;
-  height: 67%;
-}
-
-.date {
-  font: {
-    family: Gill Sans, sans-serif;
-    style: italic;
-    weight: 600;
-    variant: small-caps;
-  }
-  color: rgba(63, 0, 82, 0.829);
-  padding: 1%;
-  border-bottom: rgba(130, 86, 134, 0.623) solid 2px;
-}
-
-.header {
-  font: {
-    family: Gill Sans, sans-serif;
-    weight: 600;
-  }
-  color: #163541e0;
-}
-</style>
+<style lang="scss" src="./App.scss"></style>
