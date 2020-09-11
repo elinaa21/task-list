@@ -10,6 +10,7 @@
           :key="todo.id"
           @remove-todo="removeTodo"
         />
+        <span v-if="!todos.length" class="header">No tasks</span>
       </div>
       <AddItem @add-item="addTask" />
     </div>
@@ -20,13 +21,7 @@
 import TodoItem from '@/components/TodoItem/TodoItem';
 import AddItem from '@/components/AddItem/AddItem';
 
-const todos = [
-  { id: 1, title: 'Buy coffee', completed: false },
-  { id: 2, title: 'Feed the dog', completed: false },
-  { id: 3, title: 'Save the world', completed: false },
-  { id: 4, title: 'Buy coffee', completed: false },
-  { id: 5, title: 'Feed the dog', completed: false }
-];
+const todos = [];
 
 const date = new Date();
 const dayOfWeek = [
