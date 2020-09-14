@@ -12,7 +12,7 @@ export default new Vuex.Store({
       state.todos.push(payload);
     },
     REMOVE_TASK: (state, payload) => {
-      state.todos = state.todos.filter(item => item.id !== payload);
+      state.todos = payload;
     }
   },
   actions: {},

@@ -67,13 +67,13 @@ export default {
   },
   methods: {
     removeTodo(id) {
-      store.commit('REMOVE_TASK', id);
+      this.todos = this.todos.filter(item => item.id !== id);
+      store.commit('REMOVE_TASK', this.todos);
       // this.todos = this.todos.filter(item => item.id !== id);
     },
     addTask(task) {
       // this.todos.push(task);
       console.log('here');
-
       store.commit('SET_TASK', task);
     }
   }
