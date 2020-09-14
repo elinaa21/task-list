@@ -4,8 +4,21 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
+  state: {
+    todos: []
+  },
+  mutations: {
+    SET_TASK: (state, payload) => {
+      state.todos.push(payload);
+    },
+    REMOVE_TASK: (state, payload) => {
+      state.todos = state.todos.filter(item => item.id !== payload);
+    }
+  },
   actions: {},
-  modules: {}
+  getters: {
+    TASKS: state => {
+      return state.todos;
+    }
+  }
 });

@@ -20,8 +20,9 @@
 <script>
 import TodoItem from '@/components/TodoItem/TodoItem';
 import AddItem from '@/components/AddItem/AddItem';
+import store from './store';
 
-const todos = [];
+const todos = store.getters.TASKS;
 
 const date = new Date();
 const dayOfWeek = [
@@ -66,10 +67,14 @@ export default {
   },
   methods: {
     removeTodo(id) {
-      this.todos = this.todos.filter(item => item.id !== id);
+      store.commit('REMOVE_TASK', id);
+      // this.todos = this.todos.filter(item => item.id !== id);
     },
     addTask(task) {
-      this.todos.push(task);
+      // this.todos.push(task);
+      console.log('here');
+
+      store.commit('SET_TASK', task);
     }
   }
 };
