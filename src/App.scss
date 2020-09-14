@@ -4,6 +4,12 @@
   }
 }
 
+@media (max-width: 880px) {
+  select {
+    width: 50% !important;
+  }
+}
+
 .app {
     background-image: url('./img/ocean.jpg');
     background-size: cover;
@@ -50,3 +56,15 @@
     color: #163541e0;
 }
 
+select {
+  background-color: transparent;
+  outline: none;
+  width: 17%;
+  padding-left: 1%;
+  text-align: center;
+  font-family: inherit;
+  border: 1px solid rgba(130, 86, 134, 0.623);
+  border-radius: 5px;
+  color: #163541e0;
+  margin-bottom: 1%;
+}
